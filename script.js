@@ -4,8 +4,8 @@ const CONFIG = {
   inicioNamoro: "2025-12-25T00:00:00",
   distanciaKm: 525,
   fotos: [
-    "assets/photos/foto1.jpeg","assets/photos/foto2.jpeg","assets/photos/foto3.jpeg",
-    "assets/photos/foto4.jpeg","assets/photos/foto5.jpeg","assets/photos/foto6.jpeg"
+    "foto1.jpeg","foto2.jpeg","foto3.jpeg",
+    "foto4.jpeg","foto5.jpeg","foto6.jpeg"
   ],
   musica: "nossa-musica.mp4"
 };
