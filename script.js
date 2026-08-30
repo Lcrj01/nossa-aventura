@@ -7,7 +7,7 @@ const CONFIG = {
     "assets/photos/foto1.jpeg","assets/photos/foto2.jpeg","assets/photos/foto3.jpeg",
     "assets/photos/foto4.jpeg","assets/photos/foto5.jpeg","assets/photos/foto6.jpeg"
   ],
-  musica: "assets/music/nossa-musica.wav"
+  musica: "nossa-musica.mp4"
 };
 
 const story = `Eu não sei exatamente em que momento você deixou de ser apenas alguém importante...
