@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#130022" />
+  <title>Uma aventura chamada nós ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <div id="heart-layer"></div>
+
+  <main id="app">
+    <section class="screen active" id="boot">
+      <div class="panel hero-panel">
+        <div class="pixel-heart">♥</div>
+        <p class="terminal">> inicializando sistema de amor...</p>
+        <p class="terminal">> carregando memórias...</p>
+        <p class="terminal">> procurando uma pessoa especial...</p>
+        <p class="terminal">> encontrada! <span class="orange">♥</span></p>
+        <div class="progress"><span></span></div>
+        <small>100%</small>
+        <button class="glow-btn" data-next="intro">CLIQUE PARA CONTINUAR</button>
+      </div>
+    </section>
+
+    <section class="screen" id="intro">
+      <div class="panel">
+        <span class="step">02 · OLÁ, MEU AMOR</span>
+        <h1>Olá, meu amor.</h1>
+        <p>Eu poderia simplesmente escrever uma mensagem dizendo que te amo.</p>
+        <p>Mas você sabe que eu gosto de fazer as coisas de um jeito diferente...</p>
+        <p>Então eu programei isso especialmente para você.</p>
+        <button class="text-btn" data-next="lock">♥ Clique para continuar</button>
+      </div>
+    </section>
+
+    <section class="screen" id="lock">
+      <div class="panel lock-panel">
+        <span class="step">03 · ACESSO RESTRITO</span>
+        <div class="lock-icon">♥</div>
+        <h2>Conteúdo protegido</h2>
+        <p>Digite uma senha especial para continuar.</p>
+        <input id="password" type="password" autocomplete="off" placeholder="senha..." />
+        <button class="glow-btn" id="login">ENTRAR</button>
+        <small>Dica: é algo que só nós dois sabemos 😉</small>
+        <p id="password-msg" class="message"></p>
+      </div>
+    </section>
+
+    <section class="screen" id="unlocked">
+      <div class="panel center">
+        <div class="pixel-heart big">♥</div>
+        <h1>Senha correta.</h1>
+        <p>Bem-vindo à nossa história.</p>
+        <button class="glow-btn" data-next="story">CONTINUAR</button>
+      </div>
+    </section>
+
+    <section class="screen" id="story">
+      <div class="panel story-panel">
+        <span class="step">04 · NOSSA HISTÓRIA</span>
+        <div id="typed-story"></div>
+        <button class="glow-btn hidden" id="story-next" data-next="memories">CONTINUAR</button>
+      </div>
+    </section>
+
+    <section class="screen" id="memories">
+      <div class="panel wide">
+        <span class="step">05 · NOSSOS MOMENTOS FAVORITOS</span>
+        <div class="photo-grid" id="photo-grid">
+          <div class="photo-placeholder">Sua foto 1</div>
+          <div class="photo-placeholder">Sua foto 2</div>
+          <div class="photo-placeholder">Sua foto 3</div>
+          <div class="photo-placeholder">Sua foto 4</div>
+          <div class="photo-placeholder">Sua foto 5</div>
+          <div class="photo-placeholder">Sua foto 6</div>
+        </div>
+        <p class="caption">Cada momento com você é meu favorito. ❤️</p>
+        <button class="glow-btn" data-next="counter">CONTINUAR</button>
+      </div>
+    </section>
+
+    <section class="screen" id="counter">
+      <div class="panel">
+        <span class="step">06 · CONTADOR DO NOSSO TEMPO</span>
+        <p>Estamos juntos há:</p>
+        <div class="counter-grid">
+          <div><strong id="days">0</strong><small>dias</small></div>
+          <div><strong id="hours">0</strong><small>horas</small></div>
+          <div><strong id="minutes">0</strong><small>minutos</small></div>
+          <div><strong id="seconds">0</strong><small>segundos</small></div>
+        </div>
+        <p>e infinitos momentos inesquecíveis. 💜</p>
+        <button class="glow-btn" data-next="distance">CONTINUAR</button>
+      </div>
+    </section>
+
+    <section class="screen" id="distance">
+      <div class="panel wide">
+        <span class="step">07 · A DISTÂNCIA ENTRE NÓS</span>
+        <div class="map">
+          <div class="city left"><span>📍</span><b>Rio de Janeiro</b></div>
+          <div class="route"><i>♥</i></div>
+          <div class="city right"><span>📍</span><b>São Paulo</b></div>
+        </div>
+        <h2 id="distance-km">distância: 365 km</h2>
+        <div class="quote">Mas isso é apenas distância.<br/>Porque meu coração nunca aprendeu a medir você em quilômetros. 💜</div>
+        <button class="glow-btn" data-next="rpg">CONTINUAR</button>
+      </div>
+    </section>
+
+    <section class="screen" id="rpg">
+      <div class="panel wide rpg">
+        <span class="step">08 · BATALHA: DISTÂNCIA</span>
+        <div class="battle">
+          <div class="monster">👹<small>MONSTRO: DISTÂNCIA</small></div>
+          <div class="hp"><span id="hp"></span></div>
+          <p>A distância tenta nos separar,<br/>mas nosso amor é mais forte!</p>
+          <div class="choices">
+            <button data-choice="fight">⚔️ Lutar</button>
+            <button data-choice="love">❤️ Amar</button>
+            <button data-choice="talk">💬 Conversar</button>
+            <button data-choice="wait">⌛ Esperar</button>
+          </div>
+          <div id="battle-result" class="battle-result"></div>
+          <button class="glow-btn hidden" id="battle-next" data-next="hearts">CONTINUAR❤️</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="hearts">
+      <div class="panel heart-panel">
+        <span class="step">09 · CHUVA DE AMOR</span>
+        <h2>Clique em qualquer lugar<br/>e espalhe amor!</h2>
+        <p>Quanto mais você clicar, mais corações aparecem. ❤️</p>
+        <div id="heart-score">Amor coletado: 0</div>
+        <button class="glow-btn" data-next="music">CONTINUAR</button>
+      </div>
+    </section>
+
+    <section class="screen" id="music">
+      <div class="panel">
+        <span class="step">10 · NOSSA MÚSICA 🎵</span>
+        <div class="music-player" id="musicPlayer">
+          <div class="album-art">
+            <div class="vinyl">♫</div>
+            <div class="equalizer"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="music-info">
+            <div class="music-kicker">♪ NOSSA MÚSICA</div>
+            <h2>A música que me lembra você</h2>
+            <p>Algumas músicas a gente escuta.<br>Outras a gente sente. ❤️</p>
+            <div class="music-progress"><span id="currentTime">0:00</span><input id="progress" type="range" min="0" max="100" value="0"><span id="duration">0:00</span></div>
+            <div class="music-controls"><button id="back10">↶</button><button id="playPause" class="play-main">▶</button><button id="forward10">↷</button><button id="mute">🔊</button></div>
+            <input id="volume" class="volume" type="range" min="0" max="1" step=".01" value=".85">
+            <div class="music-note">♪ essa música agora faz parte da nossa história...</div>
+          </div>
+          <audio id="audio" preload="metadata"></audio>
+        </div>
+  
+        <button class="glow-btn" data-next="easter">CONTINUAR</button>
+      </div>
+    </section>
+
+    <section class="screen" id="easter">
+      <div class="panel center">
+        <span class="step">11 · EASTER EGG</span>
+        <div class="star-secret" id="secret-star">★</div>
+        <h2>Você encontrou uma estrela secreta!</h2>
+        <p id="egg-text">Clique na estrela para revelar uma memória especial.</p>
+        <button class="glow-btn hidden" id="egg-next" data-next="chest">CONTINUAR ❤️</button>
+      </div>
+    </section>
+
+    <section class="screen" id="chest">
+      <div class="panel center">
+        <span class="step">12 · VOCÊ ENCONTROU ALGO ESPECIAL</span>
+        <p>Um baú misterioso apareceu.</p>
+        <div class="chest" id="chest-icon">🧰</div>
+        <button class="glow-btn" id="open-chest">ABRIR BAÚ</button>
+        <p id="chest-msg" class="message"></p>
+      </div>
+    </section>
+
+    <section class="screen" id="letter">
+      <div class="panel letter">
+        <span class="step">13 · MENSAGEM SECRETA</span>
+        <div class="paper">
+          <p>Meu amor,</p>
+          <p>Se você chegou até aqui, é porque topou viver essa aventura comigo.</p>
+          <p>Quero que saiba que cada linha de código, cada detalhe e cada ideia foi feita com o mesmo sentimento que cresce aqui dentro por você: <b>AMOR.</b></p>
+          <p>Você é meu melhor capítulo.</p>
+          <p>Te amo hoje, amanhã e sempre.</p>
+          <p>— Pra sempre seu,<br/><b>Lucas</b> 💜🧡</p>
+        </div>
+        <button class="glow-btn" data-next="final">CONTINUAR</button>
+      </div>
+    </section>
+
+    <section class="screen final-screen" id="final">
+      <div class="final-content">
+        <div class="silhouette">♥</div>
+        <span class="step">14 · MISSÃO CONCLUÍDA</span>
+        <h2>Missão concluída.</h2>
+        <p>Experiência adquirida: ∞</p>
+        <p>Memórias criadas: incontáveis</p>
+        <p>Distância derrotada: temporariamente</p>
+        <p>Amor: <b>NÍVEL MÁXIMO ❤️</b></p>
+        <hr />
+        <p>Obrigado por fazer parte da minha história.</p>
+        <p>Essa foi apenas a nossa primeira aventura.</p>
+        <h1>EU TE AMO</h1>
+        <div class="final-heart">♥</div>
+        <p>E ainda temos muitas outras para viver.</p>
+        <small>Feito com todo meu amor, Lucas → Rael 💜🧡</small>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
