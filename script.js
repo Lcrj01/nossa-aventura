@@ -7,7 +7,7 @@ const CONFIG = {
     "foto1.jpeg","foto2.jpeg","foto3.jpeg",
     "foto4.jpeg","foto5.jpeg","foto6.jpeg"
   ],
-  musica: "nossa-musica.mp4"
+  musica: "nossa-musica.mp3"
 };
 
 const story = `Eu não sei exatamente em que momento você deixou de ser apenas alguém importante...
